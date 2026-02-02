@@ -16,7 +16,8 @@ public class EmailService {
         String link = "https://ekart-frontend-kappa.vercel.app/verify-email?token=" + token;
 
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("santanuedu2005@gmail.com"); // MUST be verified in Brevo
+        message.setFrom("9f29de001@smtp-brevo.com"); // MUST be verified in Brevo
+        message.setReplyTo("santanuedu2005@gmail.com");
         message.setTo(to);
         message.setSubject("Please Verify Your Email");
         //Here You write some masg
@@ -35,7 +36,8 @@ public class EmailService {
     //logic for sent otp
     public void sendOtpEmail(String email, String otp) {
         SimpleMailMessage mailMessage=new SimpleMailMessage();
-        mailMessage.setFrom("santanuedu2005@gmail.com");
+        mailMessage.setFrom("9f29de001@smtp-brevo.com");
+        mailMessage.setReplyTo("santanuedu2005@gmail.com");
         mailMessage.setTo(email);
         mailMessage.setSubject("OTP FOR RESET PASSWORD");
         mailMessage.setText("Never Share this OTP to anyone.This is Your Six Digit Otp: \n" + otp);
