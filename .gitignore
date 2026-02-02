@@ -1,0 +1,13 @@
+# Maven / build artifacts
+/target/
+
+# Local properties with passwords
+application-local.properties
+*.env
+
+# IDE configs
+.idea/
+*.iml
+
+# Logs
+*.log
