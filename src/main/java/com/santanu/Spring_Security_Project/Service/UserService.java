@@ -46,9 +46,20 @@ public class UserService {
         }
         user.setRole(Role.USER);
         user.setPassword(encoder.encode(user.getPassword()));
-        user.setEmailVerified(false);
+
+        //For Email System Disabled. 
+        // AUTO VERIFIED
+        user.setEmailVerified(true);
 
         User savedUser = userRepo.save(user);
+
+        // STOP HERE — do NOT send email
+        if (true) return;
+
+        //------------------------
+        //user.setEmailVerified(false);
+
+        //User savedUser = userRepo.save(user);
 
         String token = UUID.randomUUID().toString();
 
